@@ -1,7 +1,8 @@
+//CORREGIDO
+
 /**Ejercicio 3: Concatenar dos arrays A y B de la siguiente forma: A0, B0, A1, B1, A2,
 B2, ..., An, Bn. Los vectores pueden tener longitud distinta (requiere controlarlo).
 Nota: los valores de cada vector se solicitarán separados por “,” */
-
 
 function recoger_Numero() {
   let pregunta1 = prompt("Introduce enteros separados por comas: ");

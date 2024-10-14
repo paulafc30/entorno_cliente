@@ -1,3 +1,5 @@
+//CORREGIDO
+
 /**Crea un script que filtre una lista de nombres y devuelva otra lista solo con
 los que son amigos tuyos.
 Como eres una persona muy “especial”, tú solo eres amigo/a de aquellas personas cuyo

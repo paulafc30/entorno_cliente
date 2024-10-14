@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="recogerNumero()">Introduce año</button>
+    <script>
+      function recogerNumero() {
+        let anio = parseInt(prompt("Introduce un anio"));
+        let siglo = Math.ceil(anio / 100);
+        window.confirm(`El año ${anio} pertenece al siglo ${siglo}`);
+        //document.write("Hola soy paula"); // Escribir directamente en la pantalla
+      }
+    </script>
+  </body>
+</html>
