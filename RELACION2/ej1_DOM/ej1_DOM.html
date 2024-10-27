@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Enlace y Botones</title>
+</head>
+<!--1.- Crea un enlace que vaya a google. Crea dos botones junto al enlace:
+•	Al pulsar el primero, muestra la URL a dónde va el enlace y su texto.
+•	Al pulsar el segundo, cambia la URL a otra diferente y su texto por “he cambiado”
+-->
+<body>
+
+    <a id="enlace" href="https://www.google.com" target="_blank">Ir a Google</a>
+
+    <button onclick="mostrarURL()">Mostrar URL y Texto</button>
+    <button onclick="cambiarEnlace()">Cambiar URL y Texto</button>
+
+    <p id="informacion"></p>
+
+    <script>
+
+        function mostrarURL() {
+            const enlace = document.getElementById("enlace");
+            const url = enlace.href;
+            const texto = enlace.textContent;
+            document.getElementById("informacion").innerText = `URL: ${url}, Texto: ${texto}`;
+        }
+
+        function cambiarEnlace() {
+            const enlace = document.getElementById("enlace");
+            enlace.href = "https://www.example.com"; 
+            enlace.textContent = "He cambiado"; 
+        }
+
+    </script>
+</body>
+</html>

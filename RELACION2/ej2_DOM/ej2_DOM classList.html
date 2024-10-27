@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="estilosej2.css" />
+  </head>
+  <!--2.- Crea una tabla de 4 filas y 4 columnas. Usando atributos HTML, coloca un borde, unas medidas de 300x300px y una alineación al centro. A continuación, crea tres botones:
+•	El primero muestra los valores de anchura y altura de la tabla, pide unos valores nuevos para cada propiedad y los aplica a la tabla. ¿se aplican correctamente los valores? ¿Falla alguno?
+•	El segundo muestra el valor actual del borde de la tabla y solicita un valor nuevo para aplicarlo. ¿Funciona correctamente el nuevo valor?
+•	El tercer botón va cambiar la alineación de la tabla cada vez que se pulse. Es decir, si la tabla está alineada al centro, al pulsar el botón, la tabla quedará alineada a la derecha. Si se pulsa el botón otra vez, se alineará a la izquierda y si vuelvo a pulsarlo, la tabla se pondrá en el centro.
+-->
+  <body>
+    <table id="tabla" border="1" width="300" height="300" align="center">
+      <thead>
+        <th>uno</th>
+        <th>dos</th>
+        <th>tres</th>
+        <th>cuatro</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <label for="nuevoAncho">Nuevo ancho:</label>
+    <input
+      type="number"
+      class="nuevoAncho"
+      placeholder="Introduce nuevo ancho"
+    />
+
+    <button id="btn_tabla">Cambiar tamaño tabla</button>
+    <br /><br />
+
+    <button id="btn_cambiar_borde">Cambiar borde</button>
+    <br /><br />
+
+    <button id="btn_cambiar_alineacion">Cambiar alineación</button>
+
+    <script>
+      let tabla = document.getElementById("tabla");
+
+      function cambiarTamano() {
+            if (tabla.classList.contains("tamano-medio")) {
+                tabla.classList.remove("tamano-medio");
+                tabla.classList.add("tamano-pequeno");
+            } else {
+                tabla.classList.remove("tamano-pequeno");
+                tabla.classList.add("tamano-medio");
+            }
+        }
+
+        function cambiarBorde() {
+            if (tabla.classList.contains("borde-fino")) {
+                tabla.classList.remove("borde-fino");
+                tabla.classList.add("borde-grueso");
+            } else {
+                tabla.classList.remove("borde-grueso");
+                tabla.classList.add("borde-fino");
+            }
+        }
+
+        function cambiarAlineacion() {
+            if (tabla.classList.contains("alinear-centro")) {
+                tabla.classList.remove("alinear-centro");
+                tabla.classList.add("alinear-derecha");
+            } else if (tabla.classList.contains("alinear-derecha")) {
+                tabla.classList.remove("alinear-derecha");
+                tabla.classList.add("alinear-izquierda");
+            } else {
+                tabla.classList.remove("alinear-izquierda");
+                tabla.classList.add("alinear-centro");
+            }
+        }
+
+
+      let botonTabla = document.getElementById("btn_tabla");
+      botonModificar.addEventListener("click", modificarTabla);
+
+      let botonBorde = document.getElementById("btn_cambiar_borde");
+      botonModificar.addEventListener("click", modificarBorde);
+
+      let botonAlineacion = document.getElementById("btn_cambiar_alineacion");
+      botonModificar.addEventListener("click", modificarAlineacion);
+    </script>
+  </body>
+</html>
