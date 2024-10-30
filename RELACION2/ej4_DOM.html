@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 4</title>
+    <!--Crea una galería de fotos (al menos 5 fotos) que posea un botón para avanzar y otro para retroceder.
+    •	El botón para avanzar hará que se muestre la siguiente foto cada vez que se pulse. Si se llega al final de la lista de imágenes, el botón deja de funcionar.
+    •	El botón para retroceder hará que se muestre la foto anterior cada vez que se pulse. Si se llega al principio de la lista de imágenes, el botón deja de funcionar.
+
+	b) Mejorar el ejercicio haciendo que el botón correspondiente se deshabilite cuando se alcanza el final/principio de la lista de fotos.
+    -->
+
+    <style>
+      button {
+        height: 400px;
+        width: 40px;
+        margin: 0px;
+        background-color: red;
+        color: white;
+      }
+
+      img {
+        width: 300px;
+        height: 200px;
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn_retroceder">R</button>
+    <img
+      id="foto"
+      src="https://www.infobae.com/resizer/v2/BLZJHTB27ZHUPKK3A7GXTMIEQA.jpg?auth=3725a36d80445c0231040a7ada6f4cfdac65779bb5e2d3215b878a772d1382c2&smart=true&width=350&height=350&quality=85"
+    />
+    <button id="btn_avanzar">A</button>
+
+    <script>
+      let fotos = [
+        "https://www.infobae.com/resizer/v2/BLZJHTB27ZHUPKK3A7GXTMIEQA.jpg?auth=3725a36d80445c0231040a7ada6f4cfdac65779bb5e2d3215b878a772d1382c2&smart=true&width=350&height=350&quality=85",
+        "https://elmedicointeractivo.com/wp-content/uploads/2021/11/meme-gato.jpg",
+        "https://s1.elespanol.com/2018/04/14/social/la_jungla_-_social_299733479_73843953_1706x1280.jpg",
+        "https://i.pinimg.com/236x/ef/34/86/ef34862c33c40f9ce27eaf47e8bdf973.jpg",
+        "https://i.pinimg.com/236x/45/d3/46/45d346b09591d96323a5c75b0b43caff.jpg",
+      ];
+
+      let i = 0;
+      let foto = document.getElementById("foto");
+
+      function botonAvanzar() {
+        if (i < fotos.length - 1) {
+          i++;
+          foto.src = fotos[i];
+        }
+      }
+
+      function botonRetroceder() {
+        if (i > 0) {
+          i--;
+          foto.src = fotos[i];
+        }
+      }
+
+      document
+        .getElementById("btn_avanzar")
+        .addEventListener("click", botonAvanzar);
+      document
+        .getElementById("btn_retroceder")
+        .addEventListener("click", botonRetroceder);
+    </script>
+  </body>
+</html>

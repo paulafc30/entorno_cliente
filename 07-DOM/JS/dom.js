@@ -58,7 +58,7 @@ function inicioDOM() {
 
   parrafo1 = document.querySelector("projects");
 
-  //querySelectorAll() array vacio si no encuentro nada array con cosas si si
+  //querySelectorAll() array vacio si no encuentro nada array con cosas si 
   let elementos = document.querySelectorAll("p.parrafo1");
   for (let i = 0; i < parrafos.length; i++) {
     console.log(`Elemento ${i + 1}: ${parrafos[i].innerHTML}`);

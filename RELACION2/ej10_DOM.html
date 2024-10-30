@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 10</title>
+    <style>
+      div {
+        width: 300px;
+        height: 300px;
+      }
+
+      .uno {
+        background-color: red;
+      }
+
+      .dos {
+        background-color: blue;
+      }
+
+      .tres {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <!--Crea tres DIV de tamaño 100x100px y con un color de fondo diferente cada uno. Al pasar por encima de alguno de esos DIVs, el color de fondo de la página debe cambiar al color que tenga el DIV sobre el que está el cursor del ratón.
+b) Añade el código necesario para que el color de la página vuelva a su color original si el cursor del ratón no está encima de ninguno de los DIVs del ejercicio.
+-->
+  <body>
+    <div class="rojo"></div>
+    <div class="azul"></div>
+    <div class="amarillo"></div>
+    <script>
+    // EL EJERCICIO NO FUNCIONA
+      let div1 = document.getElementsByClassName('rojo');
+      let div2 = document.getElementsByClassName('azul');
+      let div3 = document.getElementsByClassName('amarillo');
+
+      function cambiarFondo(){
+          if( == div1){
+              document.style.backgroundColor = div1;
+          }else if( == div2){
+              document.style.backgroundColor = div2;
+          }else{
+              document.style.backgroundColor = div3;
+          }
+      }
+
+      function restaurarFondo() {
+          document.body.style.backgroundColor = '';
+      }
+
+      div1.addEventListener("mouseover",cambiarFondo);
+      div2.addEventListener("mouseover",cambiarFondo);
+      div3.addEventListener("mouseover",cambiarFondo);
+
+      div1.addEventListener("mouseout", restaurarFondo);
+      div2.addEventListener("mouseout", restaurarFondo);
+      div3.addEventListener("mouseout", restaurarFondo);
+    </script>
+  </body>
+</html>

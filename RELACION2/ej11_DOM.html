@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 11</title>
+    <!--.- Crea tres DIV de tamaño 300x100px con un color de fondo distinto cada uno y con un texto en su interior que indique “Soy el DIV X” (siendo X un número del uno al tres).
+a)	Oculta el segundo DIV usando la propiedad visibility de CSS. Consigue que ese DIV “vuelva a aparecer” sí y solo sí, el cursor del ratón se coloca en el primer DIV.
+b)	Oculta el segundo DIV usando la propiedad display de CSS. Consigue que ese DIV “vuelva a aparecer” sí y solo sí, el cursor del ratón se coloca en el primer DIV.
+-->
+    <style>
+      div {
+        width: 300px;
+        height: 100px;
+      }
+
+      .div1 {
+        background-color:aqua;
+      }
+
+      .div2 {
+        background-color: aquamarine;
+        visibility: hidden; 
+      }
+
+      .div3 {
+        background-color: cadetblue;
+      }
+    </style>
+</head>
+<body>
+    <div class="div1">Soy el div 1</div>
+    <br>
+    <div class="div2">Soy el div 2</div>
+    <br>
+    <div class="div3">Soy el div 3</div>
+    <br>
+    <script>
+        // EL EJERCICIO NO FUNCIONA
+        
+        let div1 = document.getElementsByClassName('div1');
+        let div2 = document.getElementsByClassName('div2');
+
+        div1.addEventListener("mouseover", function() {
+            div2.style.visibility = 'visible'; 
+        });
+
+        div1.addEventListener("mouseout", function() {
+            div2.style.visibility = 'hidden'; 
+        });
+
+        div1.addEventListener("mouseover", function() {
+            div2.style.display = 'block'; 
+        });
+
+        div1.addEventListener("mouseout", function() {
+            div2.style.display = 'none'; 
+        });
+    </script>
+</body>
+</html>

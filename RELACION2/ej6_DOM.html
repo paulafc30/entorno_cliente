@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="red" value="red">Rojo</button>
+    <button id="yellow" value="yellow">Amarillo</button>
+    <button id="purple" value="purple">Morado</button>
+    <button id="blue" value="blue">Azul</button>
+    <button id="green" value="green">Verde</button>
+
+    <script>
+      document.getElementById("red").addEventListener("click", function () {
+        document.body.style.backgroundColor = this.value;
+      });
+      document.getElementById("yellow").addEventListener("click", function () {
+        document.body.style.backgroundColor = this.value;
+      });
+      document.getElementById("purple").addEventListener("click", function () {
+        document.body.style.backgroundColor = this.value;
+      });
+      document.getElementById("blue").addEventListener("click", function () {
+        document.body.style.backgroundColor = this.value;
+      });
+      document.getElementById("green").addEventListener("click", function () {
+        document.body.style.backgroundColor = this.value;
+      });
+    </script>
+  </body>
+</html>

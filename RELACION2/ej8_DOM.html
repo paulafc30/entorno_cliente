@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 8</title>
+  </head>
+  <!--Implementa el efecto ROLLOVER sobre una imagen: al pasar el ratón por encima, cambia la imagen. Al sacar el cursor fuera, la imagen vuelve a su estado original.-->
+  <body>
+    <img id="foto" src="perrito.jpg" width="300" height="300" />
+
+    <script>
+      let imagen = document.getElementById("foto");
+      let contento = "perrito.jpg";
+      let enfadado = "perrote.jpg";
+
+      let imagenActual = contento;
+
+      function cambiarImagen() {
+        if (imagenActual === contento) {
+          this.src = enfadado;
+          imagenActual = enfadado;
+        } else {
+          this.src = contento;
+          imagenActual = contento;
+        }
+      }
+
+      imagen.addEventListener("mouseover", cambiarImagen);
+      imagen.addEventListener("mouseout", cambiarImagen);
+    </script>
+  </body>
+</html>
