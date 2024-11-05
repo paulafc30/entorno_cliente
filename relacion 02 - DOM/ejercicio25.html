@@ -29,19 +29,23 @@ elemento.remove(); elimina el propio elemento. -->
 
     <!-- Botones para las diferentes acciones -->
     <button id="btnAgregarAntes">Agregar antes del primer elemento</button>
-    <button id="btnAgregarDespues">Agregar después del primer elemento</button>
-    <button id="btnAgregarAlInicio">Agregar al inicio de la lista</button>
-    <button id="btnAgregarAlFinal">Agregar al final de la lista</button>
-    <button id="btnReemplazarElementos">Reemplazar todos los elementos</button>
-    <button id="btnReemplazarPrimerElemento">
+    <button onclick="agregarDespues()">
+      Agregar después del primer elemento
+    </button>
+    <button onclick="agregarAlInicio()">Agregar al inicio de la lista</button>
+    <button onclick="agregarAlFinal()">Agregar al final de la lista</button>
+    <button onclick="reemplazarElementos()">
+      Reemplazar todos los elementos
+    </button>
+    <button onclick="reemplazarElemento()">
       Reemplazar el primer elemento
     </button>
-    <button id="btnEliminarElemento">Eliminar el primer elemento</button>
+    <button onclick="eliminarElemento()">Eliminar el primer elemento</button>
 
     <!-- Nuevos botones con querySelector -->
-    <button id="btnReemplazarElemento1">Reemplazar la 1ra Tarea</button>
-    <button id="btnEliminarElemento1">Eliminar la 1ra Tarea</button>
+    <button onclick="reemplazarElemento1()">Reemplazar la 1ra Tarea</button>
+    <button onclick="eliminarElemento1()">Eliminar la 1ra Tarea</button>
 
-    <script src="./JS/ejercicio25.js"></script>
+    <script src="./JS/ej25.js"></script>
   </body>
 </html>
