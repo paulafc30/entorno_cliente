@@ -12,8 +12,12 @@
     -->
 
     <style>
+      article {
+        display: flex;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
       button {
-        height: 400px;
+        height: 200px;
         width: 40px;
         margin: 0px;
         background-color: red;
@@ -28,12 +32,21 @@
     </style>
   </head>
   <body>
-    <button id="btn_retroceder">R</button>
-    <img
-      id="foto"
-      src="https://www.infobae.com/resizer/v2/BLZJHTB27ZHUPKK3A7GXTMIEQA.jpg?auth=3725a36d80445c0231040a7ada6f4cfdac65779bb5e2d3215b878a772d1382c2&smart=true&width=350&height=350&quality=85"
-    />
-    <button id="btn_avanzar">A</button>
+    <article>
+      <div class="botones">
+        <button id="btn_retroceder">R</button>
+      </div>
+      <div>
+        <img
+          id="foto"
+          src="https://www.infobae.com/resizer/v2/BLZJHTB27ZHUPKK3A7GXTMIEQA.jpg?auth=3725a36d80445c0231040a7ada6f4cfdac65779bb5e2d3215b878a772d1382c2&smart=true&width=350&height=350&quality=85"
+        />
+      </div>
+
+      <div class="botones">
+        <button id="btn_avanzar">A</button>
+      </div>
+    </article>
 
     <script>
       let fotos = [
@@ -52,6 +65,10 @@
           i++;
           foto.src = fotos[i];
         }
+        if (i == (fotos.length - 1)) {
+          avanzar.setAttribute("disabled","");
+          
+        }
       }
 
       function botonRetroceder() {
@@ -59,14 +76,15 @@
           i--;
           foto.src = fotos[i];
         }
+        if (i == 0) {
+          retroceder.setAttribute("disabled","");
+        }
       }
 
-      document
-        .getElementById("btn_avanzar")
-        .addEventListener("click", botonAvanzar);
-      document
-        .getElementById("btn_retroceder")
-        .addEventListener("click", botonRetroceder);
+      let avanzar = document.getElementById("btn_avanzar");
+      avanzar.addEventListener("click", botonAvanzar);
+      let retroceder = document.getElementById("btn_retroceder");
+      retroceder.addEventListener("click", botonRetroceder);
     </script>
   </body>
 </html>

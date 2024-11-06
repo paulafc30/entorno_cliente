@@ -25,8 +25,11 @@
         contador.textContent = parseInt(contador.textContent) - 1;
       }
 
-      document.getElementById("btn_sumar").addEventListener("click", Suma);
-      document.getElementById("btn_restar").addEventListener("click", Resta);
+      let sumar = document.getElementById("btn_sumar");
+      sumar.addEventListener("click", Suma);
+      
+      let restar = document.getElementById("btn_restar");
+      restar.addEventListener("click", Resta);
     </script>
   </body>
 </html>
