@@ -1,0 +1,8 @@
+function marcaDeNumeros(){
+
+}
+
+function marcaDeOperadores(){
+    
+
+}
