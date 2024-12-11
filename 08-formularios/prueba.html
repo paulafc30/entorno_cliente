@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba 1</title>
+    <style type="text/css">
+      #nombreError {
+        display: none;
+        font-size: 0.8em;
+      }
+
+      #nombreError.visible {
+        display: block; /*visible*/
+      }
+
+      #apellidosError {
+        display: none; /* no visible*/
+        font-size: 0.8em;
+      }
+
+      #apellidosError.visible {
+        display: block;
+      }
+
+      #correoError.visible {
+        display: block;
+      }
+      #correoError {
+        display: none;
+        font-size: 0.8em;
+      }
+
+      input.invalido {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <label for="nombre"> Nombre* </label>
+      <input type="text" name="nombre" id="nombre" />
+      <label for="apellidos"> Apellidos* </label>
+      <input type="text" name="apellidos" id="apellidos" />
+      <label for="correo"> Correo* </label>
+      <input type="email" name="correo" id="correo" autocomplete="off" />
+      <button id="enviar">Enviar</button>
+      <span role="alert" id="nombreError" aria-hidden="true">
+        Ingrese su nombre, por favor
+      </span>
+      <span role="alert" id="apellidosError" aria-hidden="true">
+        Ingrese sus apellidos, por favor
+      </span>
+      <span role="alert" id="correoError" aria-hidden="true">
+        Ingrese su correo, por favor
+      </span>
+    </form>
+    <script>
+      const enviar = document.getElementById("enviar");
+
+      enviar.addEventListener("click", validar);
+
+      function validar(e) {
+        e.preventDefault(); // Pone en marcha los eventos
+
+        const campoNombre = document.getElementById("nombre");
+        const campoApellidos = document.getElementById("apellidos");
+        const campoCorreo = document.getElementById("correo");
+        let valido = true;
+
+        if (!campoNombre.value) {  
+          const nombreError = document.getElementById("nombreError");
+          nombreError.classList.add("visible");
+          campoNombre.classList.add("invalido");
+          nombreError.setAttribute("aria-hidden", false);
+          nombreError.setAttribute("aria-invalid", true);
+        } else {
+          nombreError.classList.remove("visible");
+          campoNombre.classList.remove("invalido");
+          nombreError.setAttribute("aria-hidden", true); // oculto
+          nombreError.setAttribute("aria-invalid", false); // no es del mismo tipo
+        }
+
+        if (!campoApellidos.value) {
+          const apellidosError = document.getElementById("apellidosError");
+          apellidosError.classList.add("visible");
+          campoApellidos.classList.add("invalido");
+          apellidosError.setAttribute("aria-hidden", false);
+          apellidosError.setAttribute("aria-invalid", true);
+        } else {
+          apellidosError.classList.remove("visible");
+          campoApellidos.classList.remove("invalido");
+          apellidosError.setAttribute("aria-hidden", true); // oculto
+          apellidosError.setAttribute("aria-invalid", false); // no es del mismo tipo
+        }
+
+        if (!campoCorreo.value) {
+          const correoError = document.getElementById("correoError");
+          correoError.classList.add("visible");
+          campoCorreo.classList.add("invalido");
+          correoError.setAttribute("aria-hidden", false);
+          correoError.setAttribute("aria-invalid", true);
+        } else {
+          correoError.classList.remove("visible");
+          campoCorreo.classList.remove("invalido");
+          correoError.setAttribute("aria-hidden", true); // oculto
+          correoError.setAttribute("aria-invalid", false); // no es del mismo tipo
+        }
+        return valido;
+      }
+    </script>
+  </body>
+</html>
